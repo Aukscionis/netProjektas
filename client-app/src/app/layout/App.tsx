@@ -15,7 +15,7 @@ const App: React.FC<RouteComponentProps> = ({location}) => {
       <Route exact path='/' component={HomePage} />
       <Route path={'/(.+)'} render={() => (
         <Fragment >
-        <Container style={{marginTop: '7em', width: '80%'}}>
+        <Container style={{marginTop: '7em', width: '70%'}}>
        <NavBar />
         <Route exact path='/activities' component={ActivityDashboard} />
         <Route path='/activities/:id' component={ActivityDetails} />

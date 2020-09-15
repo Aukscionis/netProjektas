@@ -1,5 +1,5 @@
 import React, {useState, FormEvent, useContext, useEffect} from 'react'
-import { Form, Button, Segment } from 'semantic-ui-react';
+import { Form, Button, Segment, Grid } from 'semantic-ui-react';
 import { IActivity } from '../../../app/modules/activity';
 import {v4 as uuid} from 'uuid';
 import ActivityStore from '../../../app/stores/activityStore';
@@ -53,7 +53,9 @@ export const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({match
     }
 
     return (
-        <Segment clearing>
+        <Grid>
+            <Grid.Column width={10}>
+            <Segment clearing>
             <Form onSubmit={handleSubmit}>
                 <Form.Input onChange={handleInputChange} name='title' placeholder='Title' value={activity.title}/>
                 <Form.TextArea onChange={handleInputChange} rows={2} style={{ minHeight: 80 }} name='description' placeholder='Description' value={activity.description}/>
@@ -65,6 +67,9 @@ export const ActivityForm: React.FC<RouteComponentProps<DetailParams>> = ({match
                 <Button floated='right' onClick={() => history.push('/activities')} type='button' content='Cancel'/>
             </Form>
         </Segment>
+            </Grid.Column>
+        </Grid>
+       
     )
 }
 
